@@ -10,14 +10,14 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import UserContext from "./Providers/auth";
 
 function App() {
-    const [userToken, setUserToken] = useState(null);
-    
+    const [token, setToken] = useState(null);
+    const [idPlano, setIdPlano] = useState('');    
     const [price, setPrice] = useState('');
-    const [userImage, setUserImage] = useState('');
+    const [image, setImage] = useState('');
     const [id, setId] = useState('');
-    
+
     return (
-       <UserContext.Provider value={{ userToken, setUserToken, price, setPrice, id, setId, userImage, setUserImage }}>
+       <UserContext.Provider value={{ token, setToken, idPlano, setIdPlano, price, setPrice, id, setId, image, setImage }}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LoginPage />} />

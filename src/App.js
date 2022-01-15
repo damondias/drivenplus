@@ -11,13 +11,14 @@ import UserContext from "./Providers/auth";
 
 function App() {
     const [token, setToken] = useState(null);
-    const [idPlano, setIdPlano] = useState('');    
+    const [idPlano, setIdPlano] = useState('');
+    const [name, setName] = useState('');    
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
     const [id, setId] = useState('');
 
     return (
-       <UserContext.Provider value={{ token, setToken, idPlano, setIdPlano, price, setPrice, id, setId, image, setImage }}>
+       <UserContext.Provider value={{ token, setToken, idPlano, setIdPlano, price, setPrice, id, setId, image, setImage, name, setName }}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<LoginPage />} />

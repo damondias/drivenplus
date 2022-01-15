@@ -8,7 +8,7 @@ import UserContext, { useAuth } from '../../Providers/auth';
 
 function Login() {
 
-    const {setToken, setIdPlano} = useContext(UserContext)
+    const {setToken, setIdPlano, setName} = useContext(UserContext)
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
@@ -26,7 +26,7 @@ function Login() {
 
             promise.then(response => {
             setToken(response.data.token);
-
+            setName(response.data.name);
 
             if (response.data.membership === null) {
                 navigate('/subscriptions')
